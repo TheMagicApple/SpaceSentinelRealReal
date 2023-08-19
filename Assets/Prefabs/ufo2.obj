@@ -1,6 +1,6 @@
 # Blender 3.6.1
 # www.blender.org
-mtllib ufo.mtl
+mtllib ufo2.mtl
 o Torus.002
 v 2.241056 1.145551 0.364397
 v 1.866056 1.392368 0.364397
