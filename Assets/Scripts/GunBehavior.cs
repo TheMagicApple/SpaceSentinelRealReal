@@ -6,7 +6,7 @@ public class GunBehavior : MonoBehaviour
 {
     public float range;
     public int power;
-    public int reloadTime;// in ticks
+    public int reloadTime; // in ticks
     private int timer;
 
     private GameObject upgradedObject;
