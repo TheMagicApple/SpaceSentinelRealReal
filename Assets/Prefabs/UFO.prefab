@@ -96,9 +96,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3201611341348033920}
   - component: {fileID: 8145661936197190633}
+  - component: {fileID: 6002695750626072141}
   m_Layer: 0
   m_Name: UFO
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,7 +113,7 @@ Transform:
   m_GameObject: {fileID: 2035715790198925967}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 28.577509, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -132,8 +133,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14a98e1ee2fc48d47817f67fba42afe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 5
+  health: 0
   textObj: {fileID: 4629461575511889894}
+--- !u!135 &6002695750626072141
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2035715790198925967}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1.16
+  m_Center: {x: -0.97, y: 1.35, z: 0.21}
 --- !u!1 &4629461575511889894
 GameObject:
   m_ObjectHideFlags: 0
