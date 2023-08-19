@@ -5,10 +5,14 @@ using UnityEngine;
 public class GunBehavior : MonoBehaviour
 {
     public float range;
+    public int power;
+    public int reloadTime;
+
+    private GameObject upgradedObject;
+    public GameObject upgradePrefab;
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     void FixedUpdate()
@@ -24,6 +28,11 @@ public class GunBehavior : MonoBehaviour
             }
             
         }
+    }
+
+    void Upgrade() {
+        upgradedObject = Instantiate(upgradePrefab, transform.position, transform.rotation);
+        gameObject.SetActive(false);
     }
 
 
