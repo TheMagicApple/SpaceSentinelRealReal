@@ -30,14 +30,12 @@ public class GunBehavior : MonoBehaviour
             var distance = Vector3.Distance(target.transform.position, transform.position);
             if (distance < range)
             {
-
-                transform.LookAt(target.transform);
-
+                transform.LookAt(new Vector3(target.transform.position.x-2,transform.position.y,target.transform.position.z));
                 //transform.Rotate(new Vector3(0, 0, 0), Space.Self);//correcting the original rotation
                 if (timer >= reloadTime)
                 {
-                    Instantiate(bullet, transform.position, transform.rotation);
-                    target.GetComponent<UfoBehavior>().health -= power;
+                    Instantiate(bullet,transform.position,transform.rotation);
+                   // target.GetComponent<UfoBehavior>().health -= power;
                     timer = 0;
                 }
             }
