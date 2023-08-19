@@ -27,7 +27,11 @@ public class GunBehavior : MonoBehaviour
             if (distance < range)
             {
                 transform.LookAt(target.transform);
-                transform.Rotate(new Vector3(0, -90, 0), Space.Self);//correcting the original rotation
+                //transform.Rotate(new Vector3(0, 0, 0), Space.Self);//correcting the original rotation
+            }
+            else
+            {
+                transform.rotation = Quaternion.Euler(0, 0, 0);
             }
         }
 
