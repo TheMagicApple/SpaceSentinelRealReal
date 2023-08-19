@@ -6,9 +6,8 @@ public class GunBehavior : MonoBehaviour
 {
     public float range;
     public int power;
-    public int reloadTime; // in ticks
+    public int reloadTime;// in ticks
     private int timer;
-    private int turingSpeed;//deg/tick
 
     private GameObject upgradedObject;
     public GameObject upgradePrefab;
@@ -29,22 +28,22 @@ public class GunBehavior : MonoBehaviour
         {
             var target = closeistTarget(enemies);
             var distance = Vector3.Distance(target.transform.position, transform.position);
-            if (distance < range + 10)
+            if (distance < range)
             {
-                Vector3 targetDir = target.transform.position - transform.position;
-                Quaternion targetRotation = Quaternion.LookRotation(targetDir);
-                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, turingSpeed * Time.deltaTime);
-                //transform.LookAt(target.transform);
 
-                if (timer >= reloadTime && distance < range)
+                transform.LookAt(target.transform);
+
+                //transform.Rotate(new Vector3(0, 0, 0), Space.Self);//correcting the original rotation
+                if (timer >= reloadTime)
                 {
-                    Instantiate(bullet,transform.position,transform.rotation);
+                    Instantiate(bullet, transform.position, transform.rotation);
                     target.GetComponent<UfoBehavior>().health -= power;
                     timer = 0;
                 }
             }
             else
             {
+
                 transform.rotation = Quaternion.Euler(0, 0, 0);
             }
         }
