@@ -30,6 +30,15 @@ public class MoveCamera : MonoBehaviour
         if(movingRight) transform.position+=transform.right*Time.deltaTime*speed;
         if(movingForward) transform.position+=new Vector3(transform.forward.x,0,transform.forward.z)*Time.deltaTime*speed;
         if(movingBackward) transform.position-=new Vector3(transform.forward.x,0,transform.forward.z)*Time.deltaTime*speed;
+
+        if(Input.GetAxisRaw("Mouse ScrollWheel") > 0)
+        {
+            transform.position+=new Vector3(0f,transform.forward.y,0f)*Time.deltaTime*speed;
+        }
+        else if(Input.GetAxisRaw("Mouse ScrollWheel") < 0)
+        {
+            transform.position+=new Vector3(0f,transform.forward.y*-1,0f)*Time.deltaTime*speed;
+        }
     }
     bool down(string key){
         return Input.GetKeyDown(key);
