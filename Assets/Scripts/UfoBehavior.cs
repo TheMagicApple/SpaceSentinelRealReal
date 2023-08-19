@@ -6,7 +6,7 @@ using TMPro;
 public class UfoBehavior : MonoBehaviour
 {
     public int health;
-    private int baseSpeed = 3;
+    private int speed = 3;
     public GameObject textObj;
     // Start is called before the first frame update
     void Start()
