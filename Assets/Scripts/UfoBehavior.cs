@@ -5,22 +5,23 @@ using TMPro;
 
 public class UfoBehavior : MonoBehaviour
 {
-    public int hp;
-    private int speed=3;
+    public int health;
+    private int speed = 3;
     public GameObject textObj;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (hp <= 0) {
+        if (health <= 0)
+        {
             gameObject.SetActive(false);
         }
-        transform.position-=transform.right*Time.deltaTime*speed;
-        textObj.GetComponent<TextMeshPro>().text = hp.ToString();
+        transform.position -= transform.right * Time.deltaTime * speed;
+        textObj.GetComponent<TextMeshPro>().text = health.ToString();
     }
 }

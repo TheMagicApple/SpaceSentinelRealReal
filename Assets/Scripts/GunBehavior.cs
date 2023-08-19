@@ -6,7 +6,7 @@ public class GunBehavior : MonoBehaviour
 {
     public float range;
     public int power;
-    public int reloadTime;
+    public int reloadTime;// in ticks
     private int timer;
 
     private GameObject upgradedObject;
@@ -31,6 +31,11 @@ public class GunBehavior : MonoBehaviour
             {
                 transform.LookAt(target.transform);
                 //transform.Rotate(new Vector3(0, 0, 0), Space.Self);//correcting the original rotation
+                if (timer >= reloadTime)
+                {
+                    target.GetComponent<UfoBehavior>().health -= power;
+                    timer = 0;
+                }
             }
             else
             {
@@ -43,19 +48,19 @@ public class GunBehavior : MonoBehaviour
 
     public GameObject closeistTarget(GameObject[] enemies)
     {
-        GameObject tMin = null;
+        GameObject closeistTarget = null;
         float minDist = Mathf.Infinity;
         Vector3 currentPos = transform.position;
-        foreach (GameObject t in enemies)
+        foreach (GameObject enemy in enemies)
         {
-            float dist = Vector3.Distance(t.transform.position, currentPos);
+            float dist = Vector3.Distance(enemy.transform.position, currentPos);
             if (dist < minDist)
             {
-                tMin = t;
+                closeistTarget = enemy;
                 minDist = dist;
             }
         }
-        return tMin;
+        return closeistTarget;
     }
 
     void Upgrade()
