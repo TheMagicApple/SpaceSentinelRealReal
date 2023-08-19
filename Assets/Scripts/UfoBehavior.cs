@@ -5,6 +5,7 @@ using UnityEngine;
 public class UfoBehavior : MonoBehaviour
 {
     public int hp;
+    private int speed=3;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,5 +18,7 @@ public class UfoBehavior : MonoBehaviour
         if (hp <= 0) {
             gameObject.SetActive(false);
         }
+        transform.position-=transform.right*Time.deltaTime*speed;
+
     }
 }
