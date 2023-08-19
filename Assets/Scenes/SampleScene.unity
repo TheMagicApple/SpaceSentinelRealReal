@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &5749341 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3201611341348033920, guid: 19fef4a17c2291f42bb92aabbe04e348, type: 3}
+  m_PrefabInstance: {fileID: 1756587203}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &15580152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -231,12 +236,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 30550254}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.25, y: 1.1, z: 0.43}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.08000183, y: 1.1, z: 0.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 5749341}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &30550256
 ParticleSystemRenderer:
@@ -8242,6 +8247,7 @@ GameObject:
   - component: {fileID: 963194226}
   - component: {fileID: 963194229}
   - component: {fileID: 963194230}
+  - component: {fileID: 963194231}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -11290,9 +11296,16 @@ PrefabInstance:
       propertyPath: hp
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 8145661936197190633, guid: 19fef4a17c2291f42bb92aabbe04e348, type: 3}
+      propertyPath: health
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3201611341348033920, guid: 19fef4a17c2291f42bb92aabbe04e348, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 30550255}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4629461575511889894, guid: 19fef4a17c2291f42bb92aabbe04e348, type: 3}
       insertIndex: -1
