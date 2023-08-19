@@ -9,6 +9,7 @@ public class MoveCamera : MonoBehaviour
     private bool movingForward=false;
     private bool movingBackward=false;
     private int speed=13;
+    private int scrollSpeed = 27;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,15 @@ public class MoveCamera : MonoBehaviour
         if(movingRight) transform.position+=transform.right*Time.deltaTime*speed;
         if(movingForward) transform.position+=new Vector3(transform.forward.x,0,transform.forward.z)*Time.deltaTime*speed;
         if(movingBackward) transform.position-=new Vector3(transform.forward.x,0,transform.forward.z)*Time.deltaTime*speed;
+
+        if(Input.GetAxisRaw("Mouse ScrollWheel") > 0)
+        {
+            transform.position+=new Vector3(0f,transform.forward.y,0f)*Time.deltaTime*scrollSpeed;
+        }
+        else if(Input.GetAxisRaw("Mouse ScrollWheel") < 0)
+        {
+            transform.position+=new Vector3(0f,transform.forward.y*-1,0f)*Time.deltaTime*scrollSpeed;
+        }
     }
     bool down(string key){
         return Input.GetKeyDown(key);
