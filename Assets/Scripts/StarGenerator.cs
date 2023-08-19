@@ -8,8 +8,8 @@ public class StarGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for(int i=0;i<500;i++){
-            float x=Random.Range(-20f, 20f);
+        for(int i=0;i<2000;i++){
+            float x=Random.Range(-20f, 100f);
             float z=Random.Range(-20f, 20f);
             Instantiate(star,new Vector3(x,0,z),Quaternion.identity);
         }
