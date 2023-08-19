@@ -5513,6 +5513,10 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4772412901899463036, guid: 1d7d118e4fc6d2143ad0dcdae8dd91f4, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 4060471593074781908, guid: 05997a867f438f24e9dfe693008eee95, type: 3}
+    - target: {fileID: 4772412901899463036, guid: 1d7d118e4fc6d2143ad0dcdae8dd91f4, type: 3}
       propertyPath: reloadTime
       value: 100
       objectReference: {fileID: 0}
