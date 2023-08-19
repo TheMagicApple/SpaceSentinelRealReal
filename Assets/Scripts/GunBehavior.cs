@@ -11,6 +11,7 @@ public class GunBehavior : MonoBehaviour
 
     private GameObject upgradedObject;
     public GameObject upgradePrefab;
+    public GameObject bullet;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +34,7 @@ public class GunBehavior : MonoBehaviour
                 //transform.Rotate(new Vector3(0, 0, 0), Space.Self);//correcting the original rotation
                 if (timer >= reloadTime)
                 {
+                    Instantiate(bullet,transform.position,transform.rotation);
                     target.GetComponent<UfoBehavior>().health -= power;
                     timer = 0;
                 }
