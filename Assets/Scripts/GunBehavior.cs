@@ -8,22 +8,42 @@ public class GunBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     void FixedUpdate()
     {
         var enemies = GameObject.FindGameObjectsWithTag("Enemy");
         var enemyCount = enemies.Length;
-        foreach (var enemy in enemies)
+        if (enemyCount > 0)
         {
-        // check distance
-            float distanceBetweenObjects = Vector3.Distance(transform.position, enemy.transform.position);
-            if (distanceBetweenObjects <= range) {
-                enemy.GetComponent<UfoBehavior>().hp -= 1;
+            var target = closeistTarget(enemies);
+            var distance = Vector3.Distance(target.transform.position, transform.position);
+            if (distance < range)
+            {
+                transform.LookAt(target.transform);
+                transform.Rotate(new Vector3(0, -90, 0), Space.Self);//correcting the original rotation
             }
-            
         }
+
+
+    }
+
+    public GameObject closeistTarget(GameObject[] enemies)
+    {
+        GameObject tMin = null;
+        float minDist = Mathf.Infinity;
+        Vector3 currentPos = transform.position;
+        foreach (GameObject t in enemies)
+        {
+            float dist = Vector3.Distance(t.transform.position, currentPos);
+            if (dist < minDist)
+            {
+                tMin = t;
+                minDist = dist;
+            }
+        }
+        return tMin;
     }
 
 
