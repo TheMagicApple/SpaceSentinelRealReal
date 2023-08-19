@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private int speed=30;
+    private int speed=20;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,5 +15,10 @@ public class Bullet : MonoBehaviour
     void Update()
     {
         transform.position+=transform.forward*Time.deltaTime*speed;   
+    }
+    void OnTriggerEnter(Collider c){
+        if(c.tag=="Enemy"){
+            Destroy(gameObject);
+        }
     }
 }
