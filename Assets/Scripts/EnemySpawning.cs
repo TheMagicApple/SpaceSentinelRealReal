@@ -42,6 +42,7 @@ public class EnemySpawning : MonoBehaviour
             // set enemy health to enemyHealthscaling(stage)
             GameObject e = Instantiate(enemy, new Vector3(53.7f + i * 5, 0, Random.Range(-2.5f, 1.5f)), Quaternion.identity);
             e.GetComponent<UfoBehavior>().health = BASE_ENEMY_HEALTH * enemyHealthscaling(stage);
+             e.GetComponent<UfoBehavior>().speed= 3+(stage-2);
         }
         stage++;
     }
