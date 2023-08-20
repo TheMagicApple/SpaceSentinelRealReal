@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class EnemySpawning : MonoBehaviour
 {
     public float difficultyScale;
     public int stage;
     public GameObject enemy;
     public static readonly int BASE_ENEMY_HEALTH = 5; // Use 'readonly' and specify the type
-
+    public TMP_Text round;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,5 +45,6 @@ public class EnemySpawning : MonoBehaviour
              e.GetComponent<UfoBehavior>().speed= 3+(stage-2);
         }
         stage++;
+        round.text="Round "+(stage-2);
     }
 }

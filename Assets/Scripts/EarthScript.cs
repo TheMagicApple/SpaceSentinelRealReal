@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 public class EarthScript : MonoBehaviour
 {
     public int hp;
@@ -17,6 +17,10 @@ public class EarthScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(hp<=0){
+            money.moneyAmount=0;
+            SceneManager.LoadScene("Home");
+        }
     }
 
     void OnTriggerEnter(Collider collider) {
