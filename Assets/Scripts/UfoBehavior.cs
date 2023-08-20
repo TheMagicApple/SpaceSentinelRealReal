@@ -9,6 +9,7 @@ public class UfoBehavior : MonoBehaviour
     private float baseHp;
     private int speed = 3;
     public GameObject healthbar;
+    public GameObject healthHealthBar;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,11 +27,20 @@ public class UfoBehavior : MonoBehaviour
             transform.GetChild(0).gameObject.SetActive(false);
             transform.GetChild(1).gameObject.SetActive(false);
             transform.GetChild(2).gameObject.SetActive(false);
+            transform.GetChild(4).gameObject.SetActive(false);
             StartCoroutine(die());
             //gameObject.SetActive(false);
         }
+<<<<<<< HEAD
         if (health > 0) transform.position -= transform.right * Time.deltaTime * speed;
         healthbar.transform.localScale = new Vector3(6f * (health / baseHp), healthbar.transform.localScale.y, healthbar.transform.localScale.z);
+=======
+        if(health>0){ 
+            transform.position -= transform.right * Time.deltaTime * speed;
+            healthHealthBar.transform.localScale = new Vector3((health/baseHp), healthHealthBar.transform.localScale.y, healthHealthBar.transform.localScale.z);
+            healthHealthBar.transform.localPosition=new Vector3(-0.15f-(1-healthHealthBar.transform.localScale.x),0.82f,0f);
+        }
+>>>>>>> 2da7d168403e5c82ca457adb5e771ee0b95934d6
 
     }
     IEnumerator die()
@@ -48,6 +58,15 @@ public class UfoBehavior : MonoBehaviour
         if (c.tag == "LaserBullet")
         {
             health -= 0.2f;
+        }
+        if(c.tag=="Earth" && health>-100000){
+            ParticleSystem ps = transform.GetChild(3).GetComponent<ParticleSystem>();
+            ps.Play();
+            health=-100000;
+            transform.GetChild(0).gameObject.SetActive(false);
+            transform.GetChild(1).gameObject.SetActive(false);
+            transform.GetChild(2).gameObject.SetActive(false);
+            StartCoroutine(die());
         }
     }
 }

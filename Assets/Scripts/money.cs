@@ -20,6 +20,7 @@ public class money : MonoBehaviour
 
     public void givemoney()
     {
+        //TODO: add money multiplier based on stage numnber
         moneyAmount += 1;
     }
 
