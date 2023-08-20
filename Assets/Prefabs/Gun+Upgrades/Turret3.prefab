@@ -512,10 +512,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fa7f98b7478ed1418f4cf59d7e63b9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 10000
-  power: 75
+  range: 40
+  power: 1
   reloadTime: 50
   upgradePrefab: {fileID: 0}
+  bullet: {fileID: 5383267608335540380, guid: 920898e4a0bb56b4cb0286ce37be185f, type: 3}
 --- !u!4 &7556988570890573594 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4e9032f800c5b5943aa63cedcd330ce5, type: 3}

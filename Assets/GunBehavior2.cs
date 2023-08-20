@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunBehavior : MonoBehaviour
+public class GunBehavior2 : MonoBehaviour
 {
     public float range;
     public int power;
@@ -12,7 +12,6 @@ public class GunBehavior : MonoBehaviour
     private GameObject upgradedObject;
     public GameObject upgradePrefab;
     public GameObject bullet;
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +24,6 @@ public class GunBehavior : MonoBehaviour
 
         var enemies = GameObject.FindGameObjectsWithTag("Enemy");
         var enemyCount = enemies.Length;
-
         if (enemyCount > 0)
         {
             var target = closeistTarget(enemies);
@@ -33,10 +31,11 @@ public class GunBehavior : MonoBehaviour
             if (distance < range)
             {
                 transform.LookAt(new Vector3(target.transform.position.x-2,transform.position.y,target.transform.position.z));
-                //transform.Rotate(new Vector3(0, 0, 0), Space.Self);//correcting the original rotation
+                transform.Rotate(new Vector3(0, -90, 0), Space.Self);//correcting the original rotation
                 if (timer >= reloadTime)
                 {
-                    Instantiate(bullet,transform.position,transform.rotation);
+                    Debug.Log(transform.localEulerAngles.y);
+                    Instantiate(bullet,transform.position,Quaternion.Euler(new Vector3(transform.eulerAngles.x,transform.localEulerAngles.y+90,transform.eulerAngles.z)));
                    // target.GetComponent<UfoBehavior>().health -= power;
                     timer = 0;
                 }
