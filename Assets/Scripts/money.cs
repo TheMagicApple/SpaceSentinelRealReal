@@ -6,7 +6,7 @@ public class money : MonoBehaviour
 {
     // Start is called before the first frame update
     public TMP_Text mony;
-    public static int moneyAmount;
+    public static int moneyAmount=0;
 
     void Start()
     {
