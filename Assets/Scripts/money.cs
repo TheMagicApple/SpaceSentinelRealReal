@@ -5,7 +5,7 @@ using UnityEngine;
 public class money : MonoBehaviour
 {
     // Start is called before the first frame update
-    public int moneyAmount;
+    public static int moneyAmount;
 
     void Start()
     {
@@ -21,26 +21,8 @@ public class money : MonoBehaviour
     public void givemoney()
     {
         //TODO: add money multiplier based on stage numnber
-        moneyAmount += 1 * enemySpawner.GetComponent<EnemySpawning>.enemyHealthscaling;
+        moneyAmount += 1 * round(enemySpawner.GetComponent<EnemySpawning>.stage / 3f);
     }
 
-    public bool buyKinetic()
-    {
-        if (moneyAmount >= 10)
-        {
-            moneyAmount -= 10;
-            return true;
-        }
-        return false;
-    }
 
-    public bool buyLaser()
-    {
-        if (moneyAmount >= 20)
-        {
-            moneyAmount -= 20;
-            return true;
-        }
-        return false;
-    }
 }

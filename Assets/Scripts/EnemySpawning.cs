@@ -5,14 +5,14 @@ using UnityEngine;
 public class EnemySpawning : MonoBehaviour
 {
     public float difficultyScale;
-    private int stage;
+    public int stage;
     public GameObject enemy;
     public static readonly int BASE_ENEMY_HEALTH = 5; // Use 'readonly' and specify the type
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
         stage = 1;
         difficultyScale = 0.5f; // Correct variable name and use 'float'
         spawnEnemies();
@@ -40,7 +40,7 @@ public class EnemySpawning : MonoBehaviour
         {
             //Instantiate(enemy, new Vector3(53.7f, 0, 0), Quaternion.Euler(0, 0, 0));
             // set enemy health to enemyHealthscaling(stage)
-            GameObject e = Instantiate(enemy, new Vector3(53.7f+i*5,0,0), Quaternion.identity);
+            GameObject e = Instantiate(enemy, new Vector3(53.7f + i * 5, 0, random.Next(-2.5f, 2.5f)), Quaternion.identity);
             e.GetComponent<UfoBehavior>().health = BASE_ENEMY_HEALTH * enemyHealthscaling(stage);
         }
         stage++;
