@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawning : MonoBehaviour
 {
     public float difficultyScale;
-    private int stage;
+    public int stage;
     public GameObject enemy;
     public static readonly int BASE_ENEMY_HEALTH = 5; // Use 'readonly' and specify the type
 

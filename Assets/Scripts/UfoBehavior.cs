@@ -10,10 +10,13 @@ public class UfoBehavior : MonoBehaviour
     private int speed = 3;
     public GameObject healthbar;
     public GameObject healthHealthBar;
+    private GameObject enemySpawner;
+   
     // Start is called before the first frame update
     void Start()
     {
         baseHp = health;
+        enemySpawner=GameObject.FindGameObjectsWithTag("EnemySpawner")[0];
     }
 
     // Update is called once per frame
@@ -41,9 +44,15 @@ public class UfoBehavior : MonoBehaviour
     }
     IEnumerator die()
     {
-        shmoney.GetComponent<money>().givemoney();
+        givemoney();
         yield return new WaitForSeconds(1.2f);
         this.gameObject.SetActive(false);
+    }
+    public void givemoney()
+    {
+        //TODO: add money multiplier based on stage numnber
+        money.moneyAmount += (int)(1 * Mathf.Round(enemySpawner.GetComponent<EnemySpawning>().stage/3f));
+        
     }
     void OnTriggerEnter(Collider c)
     {

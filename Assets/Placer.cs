@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class Placer : MonoBehaviour
 {
     Plane plane = new Plane(Vector3.up, 0);
@@ -10,6 +10,7 @@ public class Placer : MonoBehaviour
     private string turret;
     bool clicked=false;
     public GameObject next;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -30,8 +31,16 @@ public class Placer : MonoBehaviour
             if (plane.Raycast(ray, out distance))
             {
                 Vector3 worldPosition = ray.GetPoint(distance);
-                if(turret=="turret") Instantiate(turrt,worldPosition+3*transform.up,Quaternion.identity);
-                else Instantiate(lasr,worldPosition-13*transform.up-288*transform.forward-0*transform.right,Quaternion.identity);
+                if(turret=="turret" && money.moneyAmount>=2){
+                    Instantiate(turrt,worldPosition+3*transform.up,Quaternion.identity);
+                    money.moneyAmount-=2;
+                    
+                } 
+                else if(turret=="laser" && money.moneyAmount>=9){
+                    Instantiate(lasr,worldPosition-13*transform.up-288*transform.forward-0*transform.right,Quaternion.identity);
+                    money.moneyAmount-=9;
+                    
+                } 
             }
         }
         

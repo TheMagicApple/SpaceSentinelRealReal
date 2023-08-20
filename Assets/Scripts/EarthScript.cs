@@ -23,7 +23,7 @@ public class EarthScript : MonoBehaviour
         if (collider.tag == "Enemy") {
             hp -= 1;
             healthbar.transform.localScale = new Vector3(4.31f*(hp/baseHp), healthbar.transform.localScale.y, healthbar.transform.localScale.z);
-
+            healthbar.transform.localPosition=new Vector3((4.31f-healthbar.transform.localScale.x)*-150,healthbar.transform.localPosition.y,healthbar.transform.localPosition.z);
 
         }
     }

@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - LaserBullet
   - Earth
+  - EnemySpawner
   layers:
   - Default
   - TransparentFX
