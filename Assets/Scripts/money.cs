@@ -21,7 +21,7 @@ public class money : MonoBehaviour
     public void givemoney()
     {
         //TODO: add money multiplier based on stage numnber
-        moneyAmount += 1;
+        moneyAmount += 1 * enemySpawner.GetComponent<EnemySpawning>.enemyHealthscaling;
     }
 
     public bool buyKinetic()
