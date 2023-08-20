@@ -25,23 +25,5 @@ public class money : MonoBehaviour
         //moneyAmount += 1 * enemySpawner.GetComponent<EnemySpawning>.enemyHealthscaling;
     }
 
-    public bool buyKinetic()
-    {
-        if (moneyAmount >= 10)
-        {
-            moneyAmount -= 10;
-            return true;
-        }
-        return false;
-    }
 
-    public bool buyLaser()
-    {
-        if (moneyAmount >= 20)
-        {
-            moneyAmount -= 20;
-            return true;
-        }
-        return false;
-    }
 }
