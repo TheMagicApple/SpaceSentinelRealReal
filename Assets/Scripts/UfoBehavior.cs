@@ -7,7 +7,7 @@ public class UfoBehavior : MonoBehaviour
 {
     public float health;
     private float baseHp;
-    private int speed = 3;
+    public int speed = 3;
     public GameObject healthbar;
     public GameObject healthHealthBar;
     private GameObject enemySpawner;
