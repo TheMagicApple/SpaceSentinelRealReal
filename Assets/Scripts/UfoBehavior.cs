@@ -6,11 +6,13 @@ using TMPro;
 public class UfoBehavior : MonoBehaviour
 {
     public float health;
+    private float baseHp;
     private int speed = 3;
-    public GameObject textObj;
+    public GameObject healthbar;
     // Start is called before the first frame update
     void Start()
     {
+        baseHp = health;
     }
 
     // Update is called once per frame
@@ -28,7 +30,8 @@ public class UfoBehavior : MonoBehaviour
             //gameObject.SetActive(false);
         }
         if(health>0) transform.position -= transform.right * Time.deltaTime * speed;
-        textObj.GetComponent<TextMeshPro>().text = health.ToString();
+        healthbar.transform.localScale = new Vector3(6f*(health/baseHp), healthbar.transform.localScale.y, healthbar.transform.localScale.z);
+
     }
     IEnumerator die(){
         yield return new WaitForSeconds(1.2f);
