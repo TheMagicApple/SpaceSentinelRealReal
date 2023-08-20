@@ -343,7 +343,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 20
   power: 1
-  reloadTime: 5
+  reloadTime: 3
   upgradePrefab: {fileID: 0}
   bullet: {fileID: 8780535343720181621, guid: 7c3c3e5ea2e74d345a885b171873227c, type: 3}
 --- !u!1 &7850941642756627574

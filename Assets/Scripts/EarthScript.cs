@@ -19,8 +19,8 @@ public class EarthScript : MonoBehaviour
     {
     }
 
-    void OnCollisionEnter(Collision collider) {
-        if (collider.gameObject.tag == "Enemy") {
+    void OnTriggerEnter(Collider collider) {
+        if (collider.tag == "Enemy") {
             hp -= 1;
             healthbar.transform.localScale = new Vector3(4.31f*(hp/baseHp), healthbar.transform.localScale.y, healthbar.transform.localScale.z);
 

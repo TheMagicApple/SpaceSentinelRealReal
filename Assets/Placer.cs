@@ -8,6 +8,8 @@ public class Placer : MonoBehaviour
     public GameObject turrt;
     public GameObject lasr;
     private string turret;
+    bool clicked=false;
+    public GameObject next;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +19,12 @@ public class Placer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0)){
+        if(GameObject.FindGameObjectsWithTag("Enemy").Length==0){
+            next.SetActive(true);
+        }else{
+            next.SetActive(false);
+        }
+        if(Input.GetMouseButtonDown(0) && GameObject.FindGameObjectsWithTag("Enemy").Length>0 && !(Input.mousePosition.x<400 && Input.mousePosition.y<160)){
             float distance;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (plane.Raycast(ray, out distance))
@@ -35,4 +42,5 @@ public class Placer : MonoBehaviour
     public void laser(){
         turret="laser";
     }
+
 }

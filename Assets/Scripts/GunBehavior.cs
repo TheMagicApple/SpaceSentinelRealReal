@@ -12,6 +12,7 @@ public class GunBehavior : MonoBehaviour
     private GameObject upgradedObject;
     public GameObject upgradePrefab;
     public GameObject bullet;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class GunBehavior : MonoBehaviour
 
         var enemies = GameObject.FindGameObjectsWithTag("Enemy");
         var enemyCount = enemies.Length;
+
         if (enemyCount > 0)
         {
             var target = closeistTarget(enemies);
