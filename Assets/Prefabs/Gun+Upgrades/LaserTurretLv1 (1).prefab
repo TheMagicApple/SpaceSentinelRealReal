@@ -341,7 +341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa667174ec64cda41a7c9a090af17c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 20
+  range: 10
   power: 1
   reloadTime: 3
   upgradePrefab: {fileID: 0}

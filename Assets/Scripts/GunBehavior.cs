@@ -30,7 +30,7 @@ public class GunBehavior : MonoBehaviour
         {
             var target = closeistTarget(enemies);
             var distance = Vector3.Distance(target.transform.position, transform.position);
-            if (distance < range)
+            if (distance < range && target.transform.GetChild(0).gameObject.activeSelf==true)
             {
                 transform.LookAt(new Vector3(target.transform.position.x-2,transform.position.y,target.transform.position.z));
                 //transform.Rotate(new Vector3(0, 0, 0), Space.Self);//correcting the original rotation
@@ -44,7 +44,7 @@ public class GunBehavior : MonoBehaviour
             else
             {
 
-                transform.rotation = Quaternion.Euler(0, 0, 0);
+                //transform.rotation = Quaternion.Euler(0, 0, 0);
             }
         }
 

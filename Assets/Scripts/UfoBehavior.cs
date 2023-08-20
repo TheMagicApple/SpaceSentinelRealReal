@@ -47,7 +47,7 @@ public class UfoBehavior : MonoBehaviour
             health-=1;
         }
         if(c.tag=="LaserBullet"){
-            health-=0.2f;
+            health-=0.1f;
         }
         if(c.tag=="Earth" && health>-100000){
             ParticleSystem ps = transform.GetChild(3).GetComponent<ParticleSystem>();
@@ -56,6 +56,7 @@ public class UfoBehavior : MonoBehaviour
             transform.GetChild(0).gameObject.SetActive(false);
             transform.GetChild(1).gameObject.SetActive(false);
             transform.GetChild(2).gameObject.SetActive(false);
+            transform.GetChild(4).gameObject.SetActive(false);
             StartCoroutine(die());
         }
     }
