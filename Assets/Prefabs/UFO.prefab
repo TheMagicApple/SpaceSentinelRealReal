@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  textObj: {fileID: 0}
+  healthbar: {fileID: 3566921481827391438}
 --- !u!135 &6002695750626072141
 SphereCollider:
   m_ObjectHideFlags: 0
