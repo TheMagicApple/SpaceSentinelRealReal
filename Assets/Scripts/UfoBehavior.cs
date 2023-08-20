@@ -5,7 +5,7 @@ using TMPro;
 
 public class UfoBehavior : MonoBehaviour
 {
-    public int health;
+    public float health;
     private int speed = 3;
     public GameObject textObj;
     // Start is called before the first frame update
@@ -37,6 +37,9 @@ public class UfoBehavior : MonoBehaviour
     void OnTriggerEnter(Collider c){
         if(c.tag=="Bullet"){
             health-=1;
+        }
+        if(c.tag=="LaserBullet"){
+            health-=0.2f;
         }
     }
 }

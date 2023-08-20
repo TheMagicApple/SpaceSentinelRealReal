@@ -5,7 +5,9 @@ using UnityEngine;
 public class Placer : MonoBehaviour
 {
     Plane plane = new Plane(Vector3.up, 0);
-    public GameObject turret;
+    public GameObject turrt;
+    public GameObject lasr;
+    private string turret;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +23,16 @@ public class Placer : MonoBehaviour
             if (plane.Raycast(ray, out distance))
             {
                 Vector3 worldPosition = ray.GetPoint(distance);
-                Instantiate(turret,worldPosition+3*transform.up,Quaternion.identity);
+                if(turret=="turret") Instantiate(turrt,worldPosition+3*transform.up,Quaternion.identity);
+                else Instantiate(lasr,worldPosition-13*transform.up-288*transform.forward-0*transform.right,Quaternion.identity);
             }
         }
         
+    }
+    public void turt(){
+        turret="turret";
+    }
+    public void laser(){
+        turret="laser";
     }
 }
